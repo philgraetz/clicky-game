@@ -21,7 +21,9 @@ class App extends React.Component {
         let message = "Bzzzztt! You chose unwisely.";
         if (obj.goodClick) {
             score++;
-            topScore++;
+            if (score > topScore) {
+                topScore = score;
+            }
             message = "Good Click!"
         }
         if (obj.allClicked) {
